@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Thomann – SAP Consultant</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #16161a;
+  --bg2: #1e1e24;
+  --bg3: #26262e;
+  --border: #32323c;
+  --text: #f5f5f7;
+  --muted: #a0a0b0;
+  --light: #d8d8e0;
+  --subtle: #4a4a58;
+  --font: 'Inter', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+nav { border-bottom: 1px solid var(--border); padding: 0 3rem; height: 52px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--bg); z-index: 10; }
+.logo { font-family: var(--mono); font-size: 14px; color: var(--text); letter-spacing: -0.02em; }
+.logo span { color: var(--muted); }
+.nav-links { display: flex; gap: 2.5rem; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+.hero { padding: 7rem 3rem 5rem; border-bottom: 1px solid var(--border); max-width: 740px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-family: var(--mono); color: var(--muted); margin-bottom: 2rem; }
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; color: var(--text); }
+.hero-sub { font-size: 15px; color: var(--light); line-height: 1.7; max-width: 560px; margin-bottom: 1.5rem; }
+.hero-contact { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
+.hero-contact a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; }
+.hero-contact a:hover { color: var(--text); }
+.hero-actions { display: flex; gap: 0.75rem; }
+.btn { font-size: 13px; font-family: var(--font); padding: 8px 18px; border-radius: 6px; cursor: pointer; text-decoration: none; border: 1px solid var(--border); transition: background 0.15s, border-color 0.15s, color 0.15s; display: inline-block; }
+.btn-solid { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 500; }
+.btn-solid:hover { background: #d4d4d8; }
+.btn-ghost { background: transparent; color: var(--muted); }
+.btn-ghost:hover { color: var(--text); border-color: var(--subtle); }
+.section { padding: 4rem 3rem; border-bottom: 1px solid var(--border); }
+.section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
+.section-num { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.section-title { font-size: 13px; font-weight: 500; color: var(--text); letter-spacing: 0.02em; text-transform: uppercase; }
+.skills-list { display: flex; flex-direction: column; }
+.skill-row { display: grid; grid-template-columns: 220px 1fr; align-items: start; gap: 2rem; padding: 1.1rem 0; border-top: 1px solid var(--border); }
+.skill-row:last-child { border-bottom: 1px solid var(--border); }
+.skill-name { font-size: 14px; color: var(--text); font-weight: 500; }
+.skill-tags-inline { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: var(--bg3); color: var(--light); border: 1px solid var(--border); }
+.exp-list { display: flex; flex-direction: column; }
+.exp-row { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; padding: 1.75rem 0; border-top: 1px solid var(--border); }
+.exp-row:last-child { border-bottom: 1px solid var(--border); }
+.exp-period { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-top: 3px; line-height: 1.6; }
+.exp-org { font-size: 11px; font-family: var(--mono); color: var(--muted); margin-top: 3px; }
+.exp-role { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.exp-desc { font-size: 13px; color: var(--light); line-height: 1.7; margin-top: 6px; }
+.edu-list { display: flex; flex-direction: column; }
+.edu-row { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; padding: 1.25rem 0; border-top: 1px solid var(--border); }
+.edu-row:last-child { border-bottom: 1px solid var(--border); }
+.edu-inst { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-top: 3px; }
+.edu-degree { font-size: 14px; color: var(--light); }
+footer { padding: 1.5rem 3rem; display: flex; justify-content: space-between; font-size: 12px; font-family: var(--mono); color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">mark.thomann<span>.dev</span></span>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projekte</a>
+    <a href="#career">Werdegang</a>
+    <a href="#education">Ausbildung</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge"><span class="badge-dot"></span>Available for projects</div>
+  <h1>Mark Thomann</h1>
+  <p class="hero-sub">Solution Architect und Technical Lead für S/4HANA-Transformationen. Spezialisiert auf Datenmigration, Berechtigungskonzepte und komplexe Systemkonversionen — mit langjähriger Projekterfahrung bei namhaften österreichischen und internationalen Unternehmen.</p>
+  <div class="hero-contact">
+    <a href="mailto:Mark.thomann@proton.me">Mark.thomann@proton.me</a>
+    <a href="tel:+436649191863">+43 664 9191 863</a>
+  </div>
+  <div class="hero-actions">
+    <a href="mailto:Mark.thomann@proton.me" class="btn btn-solid">Kontakt</a>
+    <a href="#projects" class="btn btn-ghost">Projekte ansehen</a>
+  </div>
+</div>
+
+<div class="section" id="skills">
+  <div class="section-header"><span class="section-num">01</span><span class="section-title">Skills</span></div>
+  <div class="skills-list">
+    <div class="skill-row">
+      <span class="skill-name">S/4HANA Migration</span>
+      <div class="skill-tags-inline"><span class="tag">Migration Cockpit</span><span class="tag">SAP Data Services</span><span class="tag">System Conversion</span><span class="tag">SDT</span></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">ABAP &amp; UI Development</span>
+      <div class="skill-tags-inline"><span class="tag">ABAP</span><span class="tag">SAPUI5</span><span class="tag">FIORI</span><span class="tag">Data Dictionary</span></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Berechtigungsmanagement</span>
+      <div class="skill-tags-inline"><span class="tag">Rollenkonzeption</span><span class="tag">PFCG</span><span class="tag">Security Audit</span><span class="tag">ISO / PwC</span></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">SAP Basis &amp; Betrieb</span>
+      <div class="skill-tags-inline"><span class="tag">Upgrades</span><span class="tag">SAP HEC</span><span class="tag">Solution Manager</span><span class="tag">ChaRM / ITSM</span></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Module &amp; Prozesse</span>
+      <div class="skill-tags-inline"><span class="tag">FI</span><span class="tag">MM</span><span class="tag">SD</span><span class="tag">PS</span><span class="tag">Plant Maintenance</span></div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Integration &amp; Middleware</span>
+      <div class="skill-tags-inline"><span class="tag">SAP PI/PO</span><span class="tag">Business Connector</span><span class="tag">Ariba</span><span class="tag">CVI</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="projects">
+  <div class="section-header"><span class="section-num">02</span><span class="section-title">Projekterfahrung</span></div>
+  <div class="exp-list">
+    <div class="exp-row">
+      <div><div class="exp-period">04/2023 — laufend</div><div class="exp-org">PORR AG · scc</div></div>
+      <div>
+        <div class="exp-role">Solution Architect – S/4HANA Migration</div>
+        <div class="exp-desc">Verantwortung für Migrationsarchitektur und technische Umsetzung mit Migration Cockpit und SAP Data Services.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">04/2024 — 05/2025</div><div class="exp-org">Tiger Coating · scc</div></div>
+      <div>
+        <div class="exp-role">Technical Lead – S/4HANA Conversion</div>
+        <div class="exp-desc">Technische Gesamtverantwortung für die Systemkonversion, Koordination aller technischen Workstreams bis Go-live.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">02/2023 — 11/2023</div><div class="exp-org">Frequentis AG · scc</div></div>
+      <div>
+        <div class="exp-role">Technical Lead – S/4HANA Conversion</div>
+        <div class="exp-desc">Technische Projektleitung der S/4HANA-Konversion beim internationalen Technologiekonzern.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">03/2022 — 04/2024</div><div class="exp-org">Mercer Pulp Sales · scc</div></div>
+      <div>
+        <div class="exp-role">Berechtigungskonzeption – S/4HANA</div>
+        <div class="exp-desc">Entwurf und Implementierung des Rollen- und Berechtigungskonzepts für FIORI und PFCG im Rahmen der S/4HANA-Konversion.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">01/2023 — 04/2023</div><div class="exp-org">FACC AG · scc</div></div>
+      <div>
+        <div class="exp-role">Customer Vendor Integration – SAP Ariba</div>
+        <div class="exp-desc">CVI-Implementierung im bestehenden ECC-System zur Vorbereitung der SAP-Ariba-Anbindung.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">04/2022 — 11/2023</div><div class="exp-org">Kwizda GmbH · scc</div></div>
+      <div>
+        <div class="exp-role">Berechtigungskonzeption – S/4HANA</div>
+        <div class="exp-desc">Rollen- und Berechtigungsdesign für die S/4HANA-Konversion in FIORI und PFCG.</div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">02/2015 — 01/2022</div><div class="exp-org">AVL List GmbH</div></div>
+      <div>
+        <div class="exp-role">SAP Consultant &amp; Developer</div>
+        <div class="exp-desc">Sieben Jahre Gesamtverantwortung über mehrere Domänen: Upgrade-Management einer 12-Systeme-Landschaft, Cloud-Migration nach SAP HEC, Security-Audits (ISO, PwC), Solution Manager mit ITSM und ChaRM, ABAP- und SAPUI5-Entwicklung sowie Customizing in FI, MM, SD und PS.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="career">
+  <div class="section-header"><span class="section-num">03</span><span class="section-title">Beruflicher Werdegang</span></div>
+  <div class="exp-list">
+    <div class="exp-row">
+      <div><div class="exp-period">02/2022 — heute</div><div class="exp-org">scc EDV-Beratung</div></div>
+      <div><div class="exp-role">SAP Consultant</div></div>
+    </div>
+    <div class="exp-row">
+      <div><div class="exp-period">05/2015 — 01/2022</div><div class="exp-org">e1 Business Solutions GmbH</div></div>
+      <div><div class="exp-role">SAP Consultant</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="education">
+  <div class="section-header"><span class="section-num">04</span><span class="section-title">Ausbildung</span></div>
+  <div class="edu-list">
+    <div class="edu-row">
+      <div class="edu-inst">TU Graz</div>
+      <div class="edu-degree">Software Engineering and Management</div>
+    </div>
+    <div class="edu-row">
+      <div class="edu-inst">FH JOANNEUM Graz</div>
+      <div class="edu-degree">Informationsmanagement</div>
+    </div>
+    <div class="edu-row">
+      <div class="edu-inst">Gymnasium Klusemann, Graz</div>
+      <div class="edu-degree">Matura</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Mark Thomann · SAP Consultant</span>
+  <span>Wien, AT — 2026</span>
+</footer>
+
+</body>
+</html>
